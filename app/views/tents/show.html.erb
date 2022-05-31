@@ -1,24 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1><%= @tent.title %></h1>
-      <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <th scope="row">description</th>
-            <td><%= @tent.description %></td>
-          </tr>
-          <tr>
-            <th scope="row">capacity</th>
-            <td><%= @tent.capacity %></td>
-          </tr>
-          <tr>
-            <th scope="row">location</th>
-            <td><%= @tent.location %></td>
-          </tr>
-          <tr>
-            <th scope="row"></th>
-            <td><%= @tent.location %></td>
-          </tr>
-        </tbody>
-      </table>
+    <h1><%= @tent.title %></h1>
+    <ul>
+         <li>Description<%= @tent.description %></li>
+         <li>Capacity<%= @tent.capacity %></li>
+         <li>Location<%= @tent.location %></li>
+         <li>Price<%= @tent.price %></li>
+      </ul>
+  </div>
+</div>
