@@ -1,6 +1,6 @@
 <h1>Book a tent!</h1>
 
-<%= simple_form_for(@booking) do |f| %>
+<%= simple_form_for(@tent, @booking) do |f| %>
 <%= f.input :first_name %>
 <%= f.input :last_name %>
 <%= f.input :email %>
@@ -8,5 +8,4 @@
 <%= f.input :end_date %>
 
 <%= f.submit "Confirm my booking", class: "btn btn-danger btn-lg" %>
-<% end %>
 <% end %>

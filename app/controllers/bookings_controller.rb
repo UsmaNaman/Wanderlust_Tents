@@ -2,7 +2,13 @@ class BookingsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @booking = Booking.all
+    @bookings = Booking.where(user_id: current_user.id)
+    @tent = Tent.new
+  end
+
+  def show
+    set_booking
+    @tent = @booking.tent
   end
 
   def new
