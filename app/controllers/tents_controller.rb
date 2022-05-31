@@ -9,28 +9,28 @@ class TentsController < ApplicationController
     @booking = Booking.new
   end
 
-  # def new
-  #   @tent = Tent.new
-  # end
+  def new
+    @tent = Tent.new
+  end
 
-#   def create
-#     @tent = Tent.new(list_params)
-#     if @tent.save
-#       redirect_to tent_path(@tent)
-#     else
-#       render :new, status: :unprocessable_entity
-#     end
-#   end
+  def create
+    @tent = Tent.new(list_params)
+    if @tent.save
+      redirect_to tent_path(@tent)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 
-#   def destroy
-#     @tent = Tent.find(params[:id])
-#     @tent.destroy
-#     redirect_to tents_path, status: :see_other
-#   end
+  def destroy
+    @tent = Tent.find(params[:id])
+    @tent.destroy
+    redirect_to tents_path, status: :see_other
+  end
 
-#   private
+  private
 
-#   def list_params
-#     params.require(:tent).permit(:title, :description, :capacity, :location, :price)
-#   end
+  def list_params
+    params.require(:tent).permit(:title, :description, :capacity, :location, :price)
+  end
 end
