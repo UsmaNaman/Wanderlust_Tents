@@ -14,7 +14,7 @@ class TentsController < ApplicationController
   end
 
   def create
-    @tent = Tent.new(list_params)
+    @tent = Tent.new(tent_params)
     if @tent.save
       redirect_to tent_path(@tent)
     else
@@ -30,7 +30,7 @@ class TentsController < ApplicationController
 
   private
 
-  def list_params
-    params.require(:tent).permit(:title, :description, :capacity, :location, :price)
+  def tent_params
+    params.require(:tent).permit(:title, :description, :capacity, :location, :price, :photo)
   end
 end
