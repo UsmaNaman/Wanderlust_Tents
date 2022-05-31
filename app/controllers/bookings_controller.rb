@@ -13,11 +13,21 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     authorize @booking
     @booking.user = current_user
-    @booking.tent = Tent.find(params[:boat_id])
+    @booking.tent = Tent.find(params[:tent_id])
     if @booking.save
       redirect_to booking_path(@booking)
     else
       redirect_to tent_path(@tent)
     end
+  end
+
+  private
+
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
+
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
