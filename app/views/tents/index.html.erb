@@ -2,10 +2,14 @@
   <h1>Complete list of tents</h1>
 </div>
 
-<div class="cards">
-    <% @tents.each do |tent| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <%= tent.title %>
-      </div>
-    <% end %>
+<div class="container">
+  <div class="cards">
+      <% @tents.each do |tent| %>
+        <%= link_to tent_path(tent) do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+            <%= tent.title %>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
 </div>
