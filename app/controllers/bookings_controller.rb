@@ -16,15 +16,29 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @tent = Tent.find(params[:tent_id])
     @booking = Booking.new(booking_params)
-    authorize @booking
+    @booking.tent = @tent
     @booking.user = current_user
-    @booking.tent = Tent.find(params[:tent_id])
+    @booking.status = "Pending Host Validation"
     if @booking.save
       redirect_to booking_path(@booking)
     else
       redirect_to tent_path(@tent)
     end
+  end
+
+  def update
+    set_booking
+    @booking.status = "Pending Host Validation."
+    @booking.save
+    redirect_to booking_path(@booking)
+  end
+
+  def destroy
+    set_booking
+    @booking.destroy
+    redirect_to tent_path(@booking.tent), status: :see_other
   end
 
   private
