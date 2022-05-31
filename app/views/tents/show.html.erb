@@ -2,15 +2,15 @@
   <div class="row">
     <h1><%= @tent.title %></h1>
     <ul>
-      <li>Description<%= @tent.description %></li>
-      <li>Capacity<%= @tent.capacity %></li>
-      <li>Location<%= @tent.location %></li>
-      <li>Price<%= @tent.price %></li>
+      <li>Description: <%= @tent.description %></li>
+      <li>Capacity: <%= @tent.capacity %></li>
+      <li>Location: <%= @tent.location %></li>
+      <li>Price: £<%= @tent.price %></li>
     </ul>
   </div>
 
   <div>
-    <h1>Book a tent!</h1>
+    <h1>Book this tent!</h1>
     <%= simple_form_for [@tent, @booking] do |f| %>
       <%= f.input :start_date %>
       <%= f.input :end_date %>
