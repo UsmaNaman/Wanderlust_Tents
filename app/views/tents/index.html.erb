@@ -1,11 +1,11 @@
-<div>
+<div class="text-center">
   <h1>Complete list of tents</h1>
 </div>
 
-<div class="container py-5 bg-success">
-  <div class="row">
+<div class="cards">
     <% @tents.each do |tent| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
         <%= tent.title %>
-      <% end %>
-  </div>
+      </div>
+    <% end %>
 </div>
