@@ -9,11 +9,9 @@
       <strong>Start Date: <%= @bookings.last.start_date %></strong> | <strong>End Date: <%= @bookings.last.end_date %></strong>
 
   <h4><strong><%= @bookings.last.tent.title %></strong></h4>
+  <br>
   <p>Location: <%= @bookings.last.tent.location %></p>
   <p><%= @bookings.last.tent.description %></p>
-
-  <%# <div class="booking-image"><br>
-    <img src=<%= @booking.tent.photo %> alt="Your Tent photo" width="1000" class="img-responsive">
-  </div>
+  <br>
 </div>
   <%= link_to "Back to list of tents", tents_path %>
