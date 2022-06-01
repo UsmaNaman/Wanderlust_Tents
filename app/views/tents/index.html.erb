@@ -5,10 +5,15 @@
 <div class="container">
   <div class="cards">
       <% @tents.each do |tent| %>
+        <% if tent.photo.attached?%>
         <%= link_to tent_path(tent) do %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          <div class="card-category"
+            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+          url('<%= cl_image_path tent.photo.key %>');"
+          >
             <%= tent.title %>
           </div>
+          <% end %>
         <% end %>
       <% end %>
   </div>
