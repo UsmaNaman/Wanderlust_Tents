@@ -8,6 +8,7 @@
 require 'open-uri'
 
 puts "cleaning database"
+Booking.destroy_all
 Tent.destroy_all
 User.destroy_all
 
@@ -17,7 +18,6 @@ tassilo = User.create!(email: "tassilo@ibrecht.net", password: "123456")
 
 
 file_1 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1654082247/Berghaus_mt6hpu.jpg")
-puts "uri open image"
 tent_1 = Tent.create!(title: "Berghaus Air Tent Porch", description: "Featuring the same rapid-inflation system as the tent, the porch uses air beams to construct a stable space with ease. The beams are made from durable materials and include a repair kit, making them a great choice for busy family camping trips.", capacity: "5 people", location: "Camden Town", price: "50 PPD", user: tassilo )
 tent_1.photo.attach(io: file_1, filename:"nes.jpg", content_type: "image/jpg")
 
