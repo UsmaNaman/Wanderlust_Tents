@@ -1,55 +1,37 @@
-<div class="banner" style="height: 600px; background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.4) 50%), url('assets/Tentmainpic1.jpg');background-repeat: no-repeat; display:flex; background-position: center; background-size: cover">
+
+<div class="banner">
   <div class="banner-content">
-    <h1>Wanderlust Tents</h1>
+    <h1 id="main-title">Wanderlust Tents</h1>
     <p> Probably the best tents in the world... </p>
-    <form action="#" class="form-inline">
-       <input type="text" class="form-control input-lg" placeholder="Where?">
-       <input type="text" class="form-control input-lg" placeholder="When?">
-       <select name="" id="" class="form-control input-lg">
+    <form action="/tents" class="form-inline">
+       <input type="text" class="form-control input-lg" placeholder="Location?">
+       <%# <input type="text" class="form-control input-lg" placeholder="When?"> %>
+       <%# <select name="" id="" class="form-control input-lg">
          <option value="1">1 capacity</option>
          <option value="2">2 capacity</option>
          <option value="3">3 capacity</option>
-       </select>
+       </select> %>
        <input type="submit" class="btn btn-primary btn-lg" value="Search">
      </form>
   </div>
 </div>
 
-<div class="container" id="home-tents">
+<div class="container" id="lastthreetents">
   <h2 class="text-center">Recent tents</h2>
   <div class="row">
+        <% @tents.each do |tent| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url('');">
-          <div class="card-category"></div>
-          <div class="card-description">
-            <h3>Lovely tent</h3>
-            <p>Charming tent in Shoreditch</p>
+          <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url('');">
+            <div class="card-description">
+            <h3> <%= tent.title %> </h3>
+            <p><%= tent.location %></p>
+            <p><%= tent.price %></p>
+            </div>
           </div>
-          <img src="assets/tentexample1.jpg" class="card-user" alt="Ssaunier">
-          <a href="flats/ssaunier.html" class="card-link"></a>
-        </div>
+          <%= link_to "See more", tent_path(tent) %>
+          <%# <img src="assets/tentexample3.jpg" class="card-user" alt="Tent 1"> %>
+          <%# if tent.photo.attached? <%= cl_image_tag tent.photo.key, height:300, width:100% , crop :fill %>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url('');">
-          <div class="card-category"></div>
-          <div class="card-description">
-            <h3>Spacious tent</h3>
-            <p>Large tent in Clapham</p>
-          </div>
-          <img src="assets/tentexample2.jpg" class="card-user" alt="Papillard">
-          <a href="flats/papillard.html" class="card-link"></a>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url('');">
-          <div class="card-category"></div>
-          <div class="card-description">
-            <h3>Luxury tent</h3>
-            <p>Top of the range tent in Piccadilly</p>
-          </div>
-          <img src="assets/tentexample3.jpg" class="card-user" alt="Monsieurpaillard">
-          <a href="flats/monsieurpaillard.html" class="card-link"></a>
-        </div>
-      </div>
+          <% end %>
   </div>
 </div>
