@@ -1,15 +1,18 @@
 <div class="container">
-  <div class="row">
-    <h1><%= @tent.title %></h1>
-    <ul>
-      <li>Description: <%= @tent.description %></li>
-      <li>Capacity: <%= @tent.capacity %></li>
-      <li>Location: <%= @tent.location %></li>
-      <li>Price: £<%= @tent.price %></li>
-    </ul>
-  </div>
+  <div class="row justify-content-center" id="name">
+    <div class="col-6">
+      <h1><%= @tent.title %></h1>
+      <%= cl_image_tag @tent.photo.key, height: 300, width: 400, crop: :fill %>
+      <ul>
+        <li>Description: <%= @tent.description %></li>
+        <li>Capacity: <%= @tent.capacity %></li>
+        <li>Location: <%= @tent.location %></li>
+        <li>Price: £<%= @tent.price %></li>
+      </ul>
+    </div>
 
-  <div>
+
+  <div class="col-6">
     <h1>Book this tent!</h1>
     <%= simple_form_for [@tent, @booking] do |f| %>
       <%= f.input :start_date %>
@@ -18,4 +21,5 @@
     <% end %>
   </div>
   <%= link_to "Back to list of tents", tents_path %>
+  </div>
 </div>

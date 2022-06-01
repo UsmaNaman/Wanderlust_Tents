@@ -16,7 +16,7 @@ class TentsController < ApplicationController
   def create
     @tent = Tent.new(tent_params)
     if @tent.save
-      redirect_to tent_path(@tent)
+      redirect_to @tent
     else
       render :new, status: :unprocessable_entity
     end
