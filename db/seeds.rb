@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 puts "cleaning database"
+Booking.destroy_all
 Tent.destroy_all
 User.destroy_all
 
@@ -25,3 +26,5 @@ Tent.create!(title: "Phoxx 2 Tent", description: " A compact, lightweight, water
 
 
 Tent.create!(title: "5x10m Marquee", description: "Compact in storage, lightweight and easy to assemble: Our Economy PE marquees from our Product Line Optiline offer a particularly quick set up thanks to the high-quality click-in system. The fully galvanised steel frame is protected against corrosion. ", capacity: "100 people", location: "London NW1 8DB", price: "495 Pounds", user: tassilo )
+
+puts "All done!"
