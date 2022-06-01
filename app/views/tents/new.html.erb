@@ -1,12 +1,12 @@
 <h2 class="text-center">Share your <strong id="red-word">tent</strong> with the outdoor community. </h2>
 <br>
-<div id="wrapper">
+<div class="container">
   <div class="row">
     <div class="text-left form-login">
       <h2 class="text-center"><strong>Add my Tent </strong></h2>
       <br>
       <%= simple_form_for @tent do |f| %>
-      <%= f.error_notification %>
+      <%#= f.error_notification %>
       <%= f.input :title, label: "Your tent's make and model:", placeholder: "Trango Tower tent", :label_html => { :class => "label-css"} %>
       <%= f.input :capacity, label: "Tent capacity:", placeholder: "1, 2, 3?" %>
       <%= f.input :location, placeholder: "City or Postcode" %>
@@ -17,7 +17,9 @@
       <br>
 
       <%= f.button :submit, "Share my tent", class: "btn btn-danger btn-lg"%>
-      <% end %>
+    <% end %>
+      <br>
+        <%= link_to "Back to list of tents", tents_path %>
     </div>
   </div>
 </div>
