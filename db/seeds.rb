@@ -20,7 +20,6 @@ file_1 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v165408
 tent_1 = Tent.create!(title: "Berghaus Air Tent Porch", description: "Featuring the same rapid-inflation system as the tent, the porch uses air beams to construct a stable space with ease. The beams are made from durable materials and include a repair kit, making them a great choice for busy family camping trips.", capacity: "5 people", location: "Camden Town", price: "50 PPD", user: tassilo )
 tent_1.photo.attach(io: file_1, filename:"nes.jpg", content_type: "image/jpg")
 
-
 file_2 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1654082247/OutdoorRevolution_mj5z9q.jpg")
 tent_2 = Tent.create!(title: "Outdoor revolution", description: "This drive-away awning makes it easy for you to come and go in your campervan without having to take down your awning every time. It has an air beam construction for quick pitching and it easily attaches to most low-roof campervans.", capacity: "5 people - suitble for families", location: "Notting Hill", price: "22 PPD", user: tassilo)
 tent_2.photo.attach(io: file_2, filename:"nes.jpg", content_type: "image/jpg")
@@ -40,3 +39,5 @@ tent_5.photo.attach(io: file_5, filename:"nes.jpg", content_type: "image/jpg")
 file_6 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1654082247/marquee_aoplka.jpg")
 tent_6 = Tent.create!(title: "5x10m Marquee", description: "Compact in storage, lightweight and easy to assemble: Our Economy PE marquees from our Product Line Optiline offer a particularly quick set up thanks to the high-quality click-in system. The fully galvanised steel frame is protected against corrosion. ", capacity: "100 people", location: "London NW1 8DB", price: "20 PPD", user: tassilo )
 tent_6.photo.attach(io: file_6, filename:"nes.jpg", content_type: "image/jpg")
+
+puts "All done"
