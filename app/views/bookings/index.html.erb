@@ -1,57 +1,19 @@
-<h1>Bookings Index Page</h1>
+<h1>Bookings Confirmation Page</h1>
 
-<% @bookings.each do |booking| %>
-  <% if booking.start_date > Date.today  %>
-    <% if booking.status == "Pending host validation" %>
-    <li class = "dashboard">
-      <div>
-        <h2><%= @booking.tent.title %></h2>
-        <p>Description: <%= booking.tent.description %></p>
-        <p>Capacity: <%= booking.tent.capacity %></p>
-        <p>Location: <%= booking.tent.location %></p>
-        <p>Price: £<%= booking.price %></p>
-      </div>
-    <div>
-      <ul>
-        <li><strong>Wait for your host to confirm. Stay tuned !</strong></li>
-        <li><%= link_to "Delete Booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
-      </ul>
-    </div>
-  </li>
-<% end %>
+<div class="container-listing">
+  <br>
+    <h2><strong>Congratulations, your booking has been confirmed!</strong></h2><br>
+    <br>
+      <h3><strong>Your details</strong></h3>
+    <br>
+      <strong>Start Date: <%= @bookings.last.start_date %></strong> | <strong>End Date: <%= @bookings.last.end_date %></strong>
 
-<% if booking.status == "Confirmed" %>
-  <li>
-    <div>
-      <h2><%= booking.tent.title %></h2>
-        <p>Capacity: <%= booking.tent.capacity %></p>
-        <p>Location: <%= booking.tent.location %></p>
-        <p>Price: £<%= booking.price %></p>
-    </div>
-    <div>
-      <ul>
-        <li><strong>Your booking is confirmed !</strong></li>
-        <li><%= link_to "Delete Booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
-      </ul>
-    </div>
-  </li>
-<% end %>
+  <h4><strong><%= @bookings.last.tent.title %></strong></h4>
+  <p>Location: <%= @bookings.last.tent.location %></p>
+  <p><%= @bookings.last.tent.description %></p>
 
-<% if booking.status == "Canceled" %>
-  <li>
-    <div>
-      <h2><%= booking.tent.title %></h2>
-        <p>Capacity: <%= booking.tent.capacity %></p>
-        <p>Location: <%= booking.tent.location %></p>
-        <p>Price: £<%= booking.price %></p>
-    </div>
-    <div>
-      <ul>
-        <li><p><%= booking.tent.user.first_name%> canceled your booking </p><li>
-      </ul>
-    </div>
-  </li>
-<% end %>
-<% end %>
-<% end %>
+  <%# <div class="booking-image"><br>
+    <img src=<%= @booking.tent.photo %> alt="Your Tent photo" width="1000" class="img-responsive">
+  </div>
+</div>
   <%= link_to "Back to list of tents", tents_path %>
