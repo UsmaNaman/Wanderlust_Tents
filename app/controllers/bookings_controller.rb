@@ -21,10 +21,10 @@ class BookingsController < ApplicationController
     @booking.tent = @tent
     @booking.user = current_user
     # @booking.status = "Pending Host Validation"
-    if @booking.save
-      redirect_to booking_path(@booking)
+    if @booking.save!
+      redirect_to bookings_path
     else
-      redirect_to tent_path(@tent)
+      redirect_to tent_path(@tent), :unprocessable_entity
     end
   end
 
