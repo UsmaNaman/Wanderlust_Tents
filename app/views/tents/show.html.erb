@@ -2,6 +2,7 @@
   <div class="row justify-content-center" id="name">
     <div class="col-6">
       <h1><%= @tent.title %></h1>
+      <%= cl_image_tag @tent.photo.key, height: 300, width: 400, crop: :fill %>
       <ul>
         <li>Description: <%= @tent.description %></li>
         <li>Capacity: <%= @tent.capacity %></li>
