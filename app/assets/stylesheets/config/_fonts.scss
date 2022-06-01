@@ -1,13 +1,19 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Pacifico&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Dancing+Script:wght@500&family=Montserrat&family=Pacifico&display=swap');
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
 
-.banner {font-family: "Dancing Script"};
-#home-tents {font-family: "Pacifico"};
+.banner {font-family: "Montserrat"};
+
+#lastthreetents {font-family: "Montserrat"};
+
+#main-title {
+  font-family: 'Alfa Slab One', cursive;
+  font-size: 65px;
+}
 
 
 // To use a font file (.woff) uncomment following lines
