@@ -1,20 +1,23 @@
-
-  <h1>Bookings Confirmation Page</h1>
-
-  <div class="container-listing">
+<div class="container">
+  <div class="row justify-content-center" id="name">
+    <div class="col-6">
+      <br>
+    <h2><strong>Congratulations, your booking has been confirmed!</strong></h2><br>
     <br>
-      <h2><strong>Congratulations, your booking has been confirmed!</strong></h2><br>
-      <br>
-        <h3><strong>Your details</strong></h3>
-      <br>
-        <strong>Start Date: <%= @booking.start_date %></strong> | <strong>End Date: <%= @booking.end_date %></strong>
-
-    <h4><strong><%= @booking.tent.title %></strong></h4>
-    <p>Location: <%= @booking.tent.location %></p>
-    <p><%= @booking.tent.description %></p>
-
-    <%# <div class="booking-image"><br>
-      <img src=<%= @booking.tent.photo %> alt="Your Tent photo" width="1000" class="img-responsive">
+      <h3><strong>Your booking details</strong></h3>
+        <br>
+          <%= cl_image_tag @booking.tent.photo.key, height: 300, width: 635, crop: :fill %>
+          <br>
+            <ul class="list-group">
+            <li class="list-group-item"><strong>Start Date: <%= @booking.start_date %></strong> | <strong>End Date: <%= @booking.end_date %></strong></li>
+            <br>
+            <li class="list-group-item"><h4><strong><%= @booking.tent.title %></strong></h4></li>
+            <li class="list-group-item"><p>Location: <%= @booking.tent.location %></p></li>
+            <li class="list-group-item"><p><%= @booking.tent.description %></p></li>
+            <li class="list-group-item"><p>Total price: £<% time_difference = @booking.end_date.mjd - @booking.start_date.mjd %>
+            <%= time_difference * @booking.tent.price.to_i %></p></li>
+            <br>
+            <%= link_to "Back to list of tents", tents_path %>
     </div>
   </div>
-    <%= link_to "Back to list of tents", tents_path %>
+</div>

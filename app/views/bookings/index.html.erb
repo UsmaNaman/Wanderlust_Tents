@@ -8,12 +8,11 @@
       <% @past_bookings.each do |booking| %>
         <%# <% if booking.photo.attached? %>
         <%# <%= link_to booking_path(booking) do  %>
-
           <div class="card-trip">
             <%= cl_image_tag booking.tent.photo.key, height: 300, width: 350, crop: :fill %>
             <div class="card-trip-infos">
               <div>
-                 <%= booking.tent.title %>
+                <%= booking.tent.title %>
                 <br>
                 <%= booking.tent.location %>
                 <br>
