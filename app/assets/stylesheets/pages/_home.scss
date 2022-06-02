@@ -3,15 +3,15 @@
 .banner {
   height: 600px;
   background-image:
-  linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.4) 50%), url('assets/Tentmainpic1.jpg');background-repeat: no-repeat;
+  linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.4) 50%), url('https://images.unsplash.com/photo-1508873696983-2dfd5898f08b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80');
+  background-repeat: no-repeat;
   display:flex;
   background-position: center;
-  background-size: cover};
+  background-size: cover;
+};
 
 
 .banner-content {
   margin: 0 auto;
-padding: 20px};
-
-#lastthreetents {
-}
+  padding: 20px
+};
