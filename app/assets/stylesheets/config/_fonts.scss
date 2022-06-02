@@ -2,27 +2,26 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat&family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Dancing+Script:wght@500&family=Montserrat&family=Pacifico&display=swap');
-// Define fonts for body and headers
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
 
 
-.banner {
-  font-family: "Montserrat";
-  color: white;
-};
+// .banner {
+//   font-family: "Montserrat";
+//   color: white;
+// };
 
-#lastthreetents {
-  font-family: "Montserrat"
-};
+// #lastthreetents {
+//   font-family: "Montserrat"
+// };
 
-#main-title {
-  font-family: 'Alfa Slab One', cursive;
-  font-size: 65px;
-  color: white;
-  justify-content: center;
-}
-
+// #main-title {
+//   font-family: 'Alfa Slab One', cursive;
+//   font-size: 65px;
+//   color: white;
+//   justify-content: center;
+// }
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

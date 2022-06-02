@@ -5,20 +5,51 @@
     <p> Rent a tent to protect your next adventure! </p>
     <form action="/tents" class="form-inline">
        <input type="text" class="form-control input-lg" placeholder="Location?">
-       <%# <input type="text" class="form-control input-lg" placeholder="When?"> %>
-       <%# <select name="" id="" class="form-control input-lg">
+       <input type="text" class="form-control input-lg" placeholder="When?">
+       <select name="" id="" class="form-control input-lg">
          <option value="1">1 capacity</option>
          <option value="2">2 capacity</option>
          <option value="3">3 capacity</option>
-       </select> %>
+       </select>
        <input type="submit" class="btn btn-primary btn-lg" value="Search">
      </form>
   </div>
 </div>
 
-<div class="container" id="lastthreetents">
-  <h2 class="text-center">Featured tents</h2>
-  <div class="container">
+
+<section class="icons-container">
+
+    <div class="icons">
+        <%= image_tag "icon-1.png", id: "background" %>
+        <div class="info">
+            <h3>free delivery & pickup</h3>
+            <span>on all orders</span>
+        </div>
+    </div>
+
+    <div class="icons">
+      <%= image_tag "icon-2.png", id: "background" %>
+        <div class="info">
+            <h3>10 days returns</h3>
+            <span>moneyback guarantee</span>
+        </div>
+    </div>
+
+    <div class="icons">
+    <%= image_tag "icon-4.png", id: "background" %>
+        <div class="info">
+            <h3>secure payments</h3>
+            <span>protected by paypal</span>
+        </div>
+    </div>
+
+</section>
+
+<section class="products" id="products">
+
+    <h1 class="heading"> Featured <span>Tents</span> </h1>
+
+ <div class="box-container">
   <div class="cards">
       <% @tents.each do |tent| %>
         <% if tent.photo.attached?%>
@@ -29,6 +60,13 @@
           >
             <p><%= tent.title %></p>
             <p>£<%= tent.price %></p>
+          <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+
+
           </div>
           <% end %>
         <% end %>

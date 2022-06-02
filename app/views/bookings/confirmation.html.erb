@@ -1,0 +1,20 @@
+
+  <h1>Bookings Confirmation Page</h1>
+
+  <div class="container-listing">
+    <br>
+      <h2><strong>Congratulations, your booking has been confirmed!</strong></h2><br>
+      <br>
+        <h3><strong>Your details</strong></h3>
+      <br>
+        <strong>Start Date: <%= @booking.start_date %></strong> | <strong>End Date: <%= @booking.end_date %></strong>
+
+    <h4><strong><%= @booking.tent.title %></strong></h4>
+    <p>Location: <%= @booking.tent.location %></p>
+    <p><%= @booking.tent.description %></p>
+
+    <%# <div class="booking-image"><br>
+      <img src=<%= @booking.tent.photo %> alt="Your Tent photo" width="1000" class="img-responsive">
+    </div>
+  </div>
+    <%= link_to "Back to list of tents", tents_path %>
