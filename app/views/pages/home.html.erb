@@ -24,24 +24,23 @@
   </div>
 
   <div class="box-container">
-    <h1 class="heading"> Featured Tents </h1>
+    <h1 class="heading text-warning">⛰️ Featured Tents ⛰️</h1>
     <div class="cards">
         <% @tents.each do |tent| %>
           <% if tent.photo.attached?%>
             <%= link_to tent_path(tent) do %>
               <div class="card-trip">
-                <%= cl_image_tag tent.photo.key, height: 300, width: 400, crop: :fill %>
+                <%= cl_image_tag tent.photo.key, height: 300, width: 500, crop: :fill %>
                 <div class="card-trip-infos">
                   <div>
                     <span><%= tent.title %></span>
                     <br>
-                    <span class="locationcolor"><%= tent.location %></span>
+                    📍 <span class="locationcolor"><%= tent.location %></span>
                     <br>
                     £<span><%= tent.price.to_i %></span>
                   </div>
                 </div>
               </div>
-
             <% end %>
           <% end %>
         <% end %>

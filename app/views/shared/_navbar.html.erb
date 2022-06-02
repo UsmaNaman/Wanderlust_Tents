@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to root_path "#", class: "navbar-brand" do %>
-    <i class="fa-solid fa-tent" id="logo">Wanderlust</i>
+    <i class="fa-solid fa-tent text-warning" id="logo">Wanderlust</i>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,10 +9,10 @@
     </button>
 
     <nav class="navbar">
-        <a href="#about">About</a>
+        <%= link_to "About", tents_path, class: "nav-link" %>
         <%= link_to "Products", tents_path, class: "nav-link" %>
         <%= link_to "List a Tent", new_tent_path, class: "nav-link" %>
-        <a href="#contact">Contact</a>
+        <%= link_to "Contact", new_tent_path, class: "nav-link" %>
     </nav>
 
 

@@ -1,24 +1,24 @@
 <div class="container">
   <div class="row justify-content-center" id="name">
     <div class="col-6">
-      <h1><%= @tent.title %></h1>
+      <h1 class="heading text-warning"><%= @tent.title %></h1>
       <%= cl_image_tag @tent.photo.key, height: 300, width: 635, crop: :fill %>
-      <ul class="list-group">
-        <li class="list-group-item">Description: <%= @tent.description %></li>
-        <li class="list-group-item">Capacity: <%= @tent.capacity %></li>
-        <li class="list-group-item">Location: <%= @tent.location %></li>
-        <li class="list-group-item">Price: £<%= @tent.price %></li>
+      <ul class="list-group fs-5">
+        <li class="list-group-item">⛺ <%= @tent.description %></li>
+        <li class="list-group-item">🧍🏼‍♂️ Capacity: <%= @tent.capacity %></li>
+        <li class="list-group-item">📍 Location: <%= @tent.location %></li>
+        <li class="list-group-item">💸 Price: £<%= @tent.price %></li>
       </ul>
     </div>
 
-  <div class="col-6">
-    <h1>Book this tent!</h1>
+  <div class="col-6 fs-5">
+    <h1 class="heading text-warning">Book this tent ✔️</h1>
     <%= simple_form_for [@tent, @booking] do |f| %>
       <%= f.input :start_date %>
       <%= f.input :end_date %>
       <%= f.submit :Confirm %>
     <% end %>
   </div>
-  <%= link_to "Back to list of tents", tents_path %>
   </div>
+  <p class="fs-5"><%= link_to "Back to list of tents", tents_path %></p>
 </div>
