@@ -1,21 +1,48 @@
 
-<div class="banner">
+ <div class="banner">
   <div class="banner-content">
-    <h1 id="main-title">Wanderlust Tents</h1>
-    <p> Rent a tent to protect your next adventure! </p>
+    <h1 class="text-warning" id="main-title">Tent with us! ⛺</h1>
     <form action="/tents" class="form-inline">
-       <input type="text" class="form-control input-lg" placeholder="Location?">
-       <input type="text" class="form-control input-lg" placeholder="When?">
-       <select name="" id="" class="form-control input-lg">
-         <option value="1">1 capacity</option>
-         <option value="2">2 capacity</option>
-         <option value="3">3 capacity</option>
-       </select>
-       <input type="submit" class="btn btn-primary btn-lg" value="Search">
+       <input name="text" class="form-control input-lg" placeholder="Location?">
+       <label for="exampleFormControlSelect1">Start Date</label>
+       <input type="date" class="form-control input-lg" placeholder="Start Date">
+       <label for="exampleFormControlSelect1">End Date</label>
+       <input type="date" class="form-control input-lg" placeholder="End Date">
+        <div class="form-group">
+    <label for="exampleFormControlSelect1">Capacity</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    <input type="submit" class="btn btn-warning btn-md" value="Search">
+  </div>
      </form>
   </div>
 </div>
 
+ <div class="box-container">
+ <h1 class="heading"> Featured <span>Tents</span> </h1>
+  <div class="cards">
+      <% @tents.each do |tent| %>
+        <% if tent.photo.attached?%>
+        <%= link_to tent_path(tent) do %>
+          <div class="card-category"
+            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+          url('<%= cl_image_path tent.photo.key %>');"
+          >
+            <p><%= tent.title %></p>
+            <p>£<%= tent.price %></p>
+
+          </div>
+          <% end %>
+        <% end %>
+      <% end %>
+  </div>
+</div>
+</div>
 
 <section class="icons-container">
 
@@ -44,33 +71,3 @@
     </div>
 
 </section>
-
-<section class="products" id="products">
-
-    <h1 class="heading"> Featured <span>Tents</span> </h1>
-
- <div class="box-container">
-  <div class="cards">
-      <% @tents.each do |tent| %>
-        <% if tent.photo.attached?%>
-        <%= link_to tent_path(tent) do %>
-          <div class="card-category"
-            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-          url('<%= cl_image_path tent.photo.key %>');"
-          >
-            <p><%= tent.title %></p>
-            <p>£<%= tent.price %></p>
-          <div class="icons">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="cart-btn">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
-                </div>
-
-
-          </div>
-          <% end %>
-        <% end %>
-      <% end %>
-  </div>
-</div>
-</div>

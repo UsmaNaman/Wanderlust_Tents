@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #03c363;
+  background: #160f52;
   padding-left: 16px;
   padding-right: 16px;
 
@@ -17,12 +17,12 @@
 
 .navbar-lewagon a {
   float: left;
-  color: black;
+  color: rgb(255, 255, 255);
   text-align: center;
-  padding: 12px;
+  padding: 10px;
   text-decoration: none;
   font-size: 18px;
-  line-height: 25px;
+  line-height: 20px;
   border-radius: 4px;
 }
 
@@ -38,5 +38,5 @@
   width: 40px;
   border-radius: 50%;
   display: inline-block;
-  font-size: 40px;
+  font-size: 25px;
 }
