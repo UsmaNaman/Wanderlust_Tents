@@ -33,11 +33,11 @@
                 <%= cl_image_tag tent.photo.key, height: 300, width: 400, crop: :fill %>
                 <div class="card-trip-infos">
                   <div>
-                    <%= tent.title %>
+                    <span><%= tent.title %></span>
                     <br>
-                    <%= tent.location %>
+                    <span class="locationcolor"><%= tent.location %></span>
                     <br>
-                    <p>£<%= tent.price %>
+                    £<span><%= tent.price.to_i %></span>
                   </div>
                 </div>
               </div>
@@ -48,7 +48,7 @@
     </div>
   </div>
 
-  <section class="icons-container box-container background">
+  <section class="icons-container box-container homepage-background">
 
       <div class="icons">
           <%= image_tag "icon-1.png", id: "background" %>
