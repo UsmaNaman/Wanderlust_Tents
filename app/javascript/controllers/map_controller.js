@@ -8,8 +8,6 @@ export default class extends Controller {
     markers: Array
   }
 
-  static targets = ["location"]
-
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
 
@@ -30,7 +28,7 @@ export default class extends Controller {
 
       const customMarker = document.createElement("div")
       customMarker.className = "marker"
-      customMarker.style.background = `url('${marker.image_url}'), hsl(0, 50%, 80%)`
+      customMarker.style.background = `url('${marker.image_url}'), hsl(0, 100%, 80%)`
       customMarker.style.backgroundSize = "contain"
       customMarker.style.width = "25px"
       customMarker.style.height = "25px"
