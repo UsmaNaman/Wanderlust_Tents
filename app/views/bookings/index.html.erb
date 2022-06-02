@@ -1,17 +1,35 @@
-<h1>Bookings Confirmation Page</h1>
-
-<div class="container-listing">
-  <br>
-    <h2><strong>Congratulations, your booking has been confirmed!</strong></h2><br>
-    <br>
-      <h3><strong>Your details</strong></h3>
-    <br>
-      <strong>Start Date: <%= @bookings.last.start_date %></strong> | <strong>End Date: <%= @bookings.last.end_date %></strong>
-
-  <h4><strong><%= @bookings.last.tent.title %></strong></h4>
-  <br>
-  <p>Location: <%= @bookings.last.tent.location %></p>
-  <p><%= @bookings.last.tent.description %></p>
-
+<div class="text-center">
+  <h1>Complete list of bookings</h1>
 </div>
-  <%= link_to "Back to list of tents", tents_path %>
+
+<div class="container">
+  <h2>Past bookings</h2>
+  <div class="cards">
+      <% @past_bookings.each do |booking| %>
+        <%# <% if booking.photo.attached? %>
+        <%# <%= link_to booking_path(booking) do  %> %>
+          <div class="card-category"
+            style="">
+            <%= booking.tent.title %>
+            <%= booking.tent.location %>
+            <%= link_to booking_path(booking.tent) %>
+          </div>
+        <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Future bookings</h2>
+  <div class="cards">
+      <% @future_bookings.each do |booking| %>
+        <%# <% if booking.photo.attached? %>
+        <%# <%= link_to booking_path(booking) do  %> %>
+          <div class="card-category"
+            style="">
+            <%= booking.tent.title %>
+            <%= booking.tent.location %>
+            <%= link_to booking_path(booking.tent) %>
+          </div>
+        <% end %>
+  </div>
+</div>

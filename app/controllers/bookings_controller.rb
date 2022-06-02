@@ -1,9 +1,19 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
 
+  def confirmation
+    @booking = Booking.find(params[:booking_id])
+  end
+
   def index
     @bookings = Booking.where(user_id: current_user.id)
     @tent = Tent.new
+    @past_bookings = current_user.bookings.select do |booking|
+      booking.end_date < Date.today
+      end
+    @future_bookings = current_user.bookings.select do |booking|
+      booking.end_date > Date.today
+      end
   end
 
   def show
@@ -22,7 +32,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     # @booking.status = "Pending Host Validation"
     if @booking.save!
-      redirect_to bookings_path
+      redirect_to booking_confirmation_path(@booking)
     else
       redirect_to tent_path(@tent), :unprocessable_entity
     end
