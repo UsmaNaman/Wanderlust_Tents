@@ -2,11 +2,11 @@
   <div class="row justify-content-center" id="name">
     <div class="col-6">
       <h1><%= @booking.tent.title %></h1>
-      <%= cl_image_tag @booking.tent.photo.key, height: 300, width: 400, crop: :fill %>
-      <ul>
-        <li>Description: <%= @booking.tent.description %></li>
-        <li>Capacity: <%= @booking.tent.capacity %></li>
-        <li>Location: <%= @booking.tent.location %></li>
-        <li>Total price: £<%= @booking.tent.price %></li>
+      <%= cl_image_tag @booking.tent.photo.key, height: 300, width: 635, crop: :fill %>
+      <ul style= "padding: 0">
+        <li class="list-group-item">Description: <%= @booking.tent.description %></li>
+        <li class="list-group-item">Capacity: <%= @booking.tent.capacity %></li>
+        <li class="list-group-item">Location: <%= @booking.tent.location %></li>
+        <li class="list-group-item">Price: £<%= @booking.tent.price %></li>
       </ul>
     </div>
