@@ -10,12 +10,14 @@
         <%# <%= link_to booking_path(booking) do  %>
 
           <div class="card-trip">
-            <%= cl_image_tag booking.tent.photo.key, height: 300, width: 400, crop: :fill %>
+            <%= cl_image_tag booking.tent.photo.key, height: 300, width: 350, crop: :fill %>
             <div class="card-trip-infos">
               <div>
                  <%= booking.tent.title %>
                 <br>
                 <%= booking.tent.location %>
+                <br>
+                <%= link_to "Booking details", booking_path(booking) %>
               </div>
             </div>
           </div>
@@ -31,12 +33,14 @@
         <%# <%= link_to booking_path(booking) do   %>
 
           <div class="card-trip">
-            <%= cl_image_tag booking.tent.photo.key, height: 300, width: 400, crop: :fill %>
+            <%= cl_image_tag booking.tent.photo.key, height: 300, width: 350, crop: :fill %>
             <div class="card-trip-infos">
               <div>
                  <%= booking.tent.title %>
                 <br>
                 <%= booking.tent.location %>
+                <br>
+                <%= link_to "Booking details", booking_path(booking) %>
               </div>
             </div>
           </div>
