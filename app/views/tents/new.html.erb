@@ -1,9 +1,9 @@
-<h2 class="text-center">Share your <strong id="red-word">tent</strong> with the outdoor community. </h2>
+<h2 class="text-center heading text-primary fs-1">Share your <strong id="red-word">tent</strong> with the outdoor community 🧗🏻‍♂️</h2>
 <br>
 <div class="container">
   <div class="row">
-    <div class="text-left form-login">
-      <h2 class="text-center"><strong>Add my Tent </strong></h2>
+    <div class="text-left form-login fs-3">
+      <h2 class="text-center heading text-warning"><strong>Add my Tent 🏕️</strong></h2>
       <br>
       <%= simple_form_for(@tent) do |f| %>
       <%= f.input :title, label: "Your tent's make and model:", placeholder: "Trango Tower tent", :label_html => { :class => "label-css"} %>
@@ -14,7 +14,7 @@
       <br>
       <%= f.input :photo, as: :file, label: "Choose a nice picture of your tent!" %>
       <br>
-      <%= f.submit class: "btn btn-danger btn-lg"%>
+      <%= f.submit class: "btn btn-warning btn-lg"%>
       <% end %>
       <br>
       <%= link_to "Back to list of tents", tents_path %>

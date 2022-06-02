@@ -1,9 +1,9 @@
 <div class="text-center">
-  <h1>Complete list of bookings</h1>
+  <h1 class="heading text-warning">Complete List of Bookings</h1>
 </div>
 
 <div class="container">
-  <h2>Past bookings</h2>
+  <h2 class="heading text-primary fs-1">Past Bookings</h2>
   <div class="cards">
       <% @past_bookings.each do |booking| %>
         <%# <% if booking.photo.attached? %>
@@ -25,7 +25,7 @@
 </div>
 
 <div class="container">
-  <h2>Future bookings</h2>
+  <h2 class = "heading text-primary fs-1">Future Bookings</h2>
   <div class="cards">
       <% @future_bookings.each do |booking| %>
         <%# <% if booking.photo.attached? %>

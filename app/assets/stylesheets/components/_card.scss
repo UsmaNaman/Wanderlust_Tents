@@ -22,7 +22,7 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 18px;
 }
 
 // Smallest device
@@ -78,13 +78,13 @@
 }
 
 .card-trip h2 {
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 21px;
+  font-weight: bolder;
   margin: 0;
 }
 
 .card-trip p {
-  font-size: 22px;
+  font-size: 21px;
   opacity: .7;
   margin: 0;
 }
@@ -98,7 +98,11 @@
   align-items: flex-end;
   position: relative;
   background-color: #bfcadc;
-  font-size: 19px;
+  font-size: 22px;
+  font-weight: bolder;
+  &:hover {
+    background:rgb(46, 42, 42);
+  }
 }
 
 .card-trip-infos .card-trip-user {
@@ -109,5 +113,5 @@
 }
 
 .locationcolor {
-  color: black;
+  color: rgb(243, 108, 12);
 }
