@@ -5,21 +5,19 @@
     <div class="text-left form-login">
       <h2 class="text-center"><strong>Add my Tent </strong></h2>
       <br>
-      <%= simple_form_for @tent do |f| %>
-      <%#= f.error_notification %>
+      <%= simple_form_for(@tent) do |f| %>
       <%= f.input :title, label: "Your tent's make and model:", placeholder: "Trango Tower tent", :label_html => { :class => "label-css"} %>
       <%= f.input :capacity, label: "Tent capacity:", placeholder: "1, 2, 3?" %>
-      <%= f.input :location, input_html: {data: {location_autocomplete_target: "location"}}, wrapper_html: {data: {controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}, placeholder: "City or Postcode" %>
+      <%= f.input :location, input_html: {data: {location_autocomplete_target: "location"}, class:'d-none'}, wrapper_html: {data: {controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}, placeholder: "City or Postcode" %>
       <%= f.input :description, label: "A brief description of your tent:", placeholder: "Can easily fit two people and a dog! Plus it is 100% waterproof and breathable!" %>
       <%= f.input :price, label: "Price per day in £:", placeholder: "48" %>
       <br>
       <%= f.input :photo, as: :file, label: "Choose a nice picture of your tent!" %>
       <br>
-
-      <%= f.button :submit, "Share my tent", class: "btn btn-danger btn-lg"%>
-    <% end %>
+      <%= f.submit class: "btn btn-danger btn-lg"%>
+      <% end %>
       <br>
-        <%= link_to "Back to list of tents", tents_path %>
+      <%= link_to "Back to list of tents", tents_path %>
     </div>
   </div>
 </div>
