@@ -7,12 +7,17 @@
   <div class="cards">
       <% @past_bookings.each do |booking| %>
         <%# <% if booking.photo.attached? %>
-        <%# <%= link_to booking_path(booking) do  %> %>
-          <div class="card-category"
-            style="">
-            <%= booking.tent.title %>
-            <%= booking.tent.location %>
-            <%= link_to booking_path(booking.tent) %>
+        <%# <%= link_to booking_path(booking) do  %>
+
+          <div class="card-trip">
+            <%= cl_image_tag booking.tent.photo.key, height: 300, width: 400, crop: :fill %>
+            <div class="card-trip-infos">
+              <div>
+                 <%= booking.tent.title %>
+                <br>
+                <%= booking.tent.location %>
+              </div>
+            </div>
           </div>
         <% end %>
   </div>
@@ -23,12 +28,17 @@
   <div class="cards">
       <% @future_bookings.each do |booking| %>
         <%# <% if booking.photo.attached? %>
-        <%# <%= link_to booking_path(booking) do  %> %>
-          <div class="card-category"
-            style="">
-            <%= booking.tent.title %>
-            <%= booking.tent.location %>
-            <%= link_to booking_path(booking.tent) %>
+        <%# <%= link_to booking_path(booking) do   %>
+
+          <div class="card-trip">
+            <%= cl_image_tag booking.tent.photo.key, height: 300, width: 400, crop: :fill %>
+            <div class="card-trip-infos">
+              <div>
+                 <%= booking.tent.title %>
+                <br>
+                <%= booking.tent.location %>
+              </div>
+            </div>
           </div>
         <% end %>
   </div>

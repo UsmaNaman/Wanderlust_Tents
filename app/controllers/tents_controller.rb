@@ -2,6 +2,14 @@ class TentsController < ApplicationController
 
   def index
     @tents = Tent.all
+    @markers = @tents.geocoded.map do |tent|
+      {
+        lat: tent.latitude,
+        lng: tent.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { tent: tent }),
+        image_url: helpers.asset_path("tipi_map_logo.png")
+      }
+    end
   end
 
   def show
@@ -15,8 +23,9 @@ class TentsController < ApplicationController
 
   def create
     @tent = Tent.new(tent_params)
+    @tent.user = current_user
     if @tent.save
-      redirect_to @tent
+      redirect_to tent_path(@tent)
     else
       render :new, status: :unprocessable_entity
     end
