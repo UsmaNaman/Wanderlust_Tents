@@ -2,6 +2,14 @@ class TentsController < ApplicationController
 
   def index
     @tents = Tent.all
+    @markers = @tents.geocoded.map do |tent|
+      {
+        lat: tent.latitude,
+        lng: tent.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { tent: tent }),
+        image_url: helpers.asset_url("https://cdn-icons.flaticon.com/png/512/3416/premium/3416917.png?token=exp=1654168573~hmac=041566149eb2b9ef035c6eaec93a6064")
+      }
+    end
   end
 
   def show
