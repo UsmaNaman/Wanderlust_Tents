@@ -1,73 +1,78 @@
-
- <div class="banner">
-  <div class="banner-content">
-    <h1 class="text-warning" id="main-title">Tent with us! ⛺</h1>
-    <form action="/tents" class="form-inline">
-       <input name="text" class="form-control input-lg" placeholder="Location?">
-       <label for="exampleFormControlSelect1">Start Date</label>
-       <input type="date" class="form-control input-lg" placeholder="Start Date">
-       <label for="exampleFormControlSelect1">End Date</label>
-       <input type="date" class="form-control input-lg" placeholder="End Date">
-        <div class="form-group">
-    <label for="exampleFormControlSelect1">Capacity</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-    <input type="submit" class="btn btn-warning btn-md" value="Search">
-  </div>
-     </form>
-  </div>
-</div>
-
  <div class="box-container">
- <h1 class="heading"> Featured <span>Tents</span> </h1>
-  <div class="cards">
-      <% @tents.each do |tent| %>
-        <% if tent.photo.attached?%>
-        <%= link_to tent_path(tent) do %>
-          <div class="card-category"
-            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-          url('<%= cl_image_path tent.photo.key %>');"
-          >
-            <p><%= tent.title %></p>
-            <p>£<%= tent.price %></p>
+  <div class="banner">
+    <div class="banner-content">
+      <h1 class="text-warning" id="main-title">Tent with us! ⛺</h1>
+      <form action="/tents" class="form-inline">
+        <input name="text" class="form-control input-lg" placeholder="Location?">
+        <label for="exampleFormControlSelect1">Start Date</label>
+        <input type="date" class="form-control input-lg" placeholder="Start Date">
+        <label for="exampleFormControlSelect1">End Date</label>
+        <input type="date" class="form-control input-lg" placeholder="End Date">
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Capacity</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          <input type="submit" class="btn btn-warning btn-md mt-3" value="Search">
+        </div>
+      </form>
+    </div>
+  </div>
 
-          </div>
+  <div class="box-container">
+    <h1 class="heading"> Featured Tents </h1>
+    <div class="cards">
+        <% @tents.each do |tent| %>
+          <% if tent.photo.attached?%>
+            <%= link_to tent_path(tent) do %>
+              <div class="card-trip">
+                <%= cl_image_tag tent.photo.key, height: 300, width: 400, crop: :fill %>
+                <div class="card-trip-infos">
+                  <div>
+                    <%= tent.title %>
+                    <br>
+                    <%= tent.location %>
+                    <br>
+                    <p>£<%= tent.price %>
+                  </div>
+                </div>
+              </div>
+
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
+    </div>
   </div>
+
+  <section class="icons-container box-container background">
+
+      <div class="icons">
+          <%= image_tag "icon-1.png", id: "background" %>
+          <div class="info">
+              <h3>free delivery & pickup</h3>
+              <span>on all orders</span>
+          </div>
+      </div>
+
+      <div class="icons">
+        <%= image_tag "icon-2.png", id: "background" %>
+          <div class="info">
+              <h3>10 days returns</h3>
+              <span>moneyback guarantee</span>
+          </div>
+      </div>
+
+      <div class="icons">
+      <%= image_tag "icon-4.png", id: "background" %>
+          <div class="info">
+              <h3>secure payments</h3>
+              <span>protected by paypal</span>
+          </div>
+      </div>
+
+  </section>
 </div>
-</div>
-
-<section class="icons-container">
-
-    <div class="icons">
-        <%= image_tag "icon-1.png", id: "background" %>
-        <div class="info">
-            <h3>free delivery & pickup</h3>
-            <span>on all orders</span>
-        </div>
-    </div>
-
-    <div class="icons">
-      <%= image_tag "icon-2.png", id: "background" %>
-        <div class="info">
-            <h3>10 days returns</h3>
-            <span>moneyback guarantee</span>
-        </div>
-    </div>
-
-    <div class="icons">
-    <%= image_tag "icon-4.png", id: "background" %>
-        <div class="info">
-            <h3>secure payments</h3>
-            <span>protected by paypal</span>
-        </div>
-    </div>
-
-</section>
