@@ -7,13 +7,20 @@ $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
 
 
-.banner {font-family: "Montserrat"};
+.banner {
+  font-family: "Montserrat";
+  color: white;
+};
 
-#lastthreetents {font-family: "Montserrat"};
+#lastthreetents {
+  font-family: "Montserrat"
+};
 
 #main-title {
   font-family: 'Alfa Slab One', cursive;
   font-size: 65px;
+  color: white;
+  justify-content: center;
 }
 
 
