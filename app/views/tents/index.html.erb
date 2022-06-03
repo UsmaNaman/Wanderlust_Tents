@@ -1,5 +1,5 @@
 
-  <div class="box-container">
+  <div class="container">
     <h1 class="heading text-warning">⛰️ Complete List of Tents ⛰️</h1>
     <div class="cards">
         <% @tents.each do |tent| %>
@@ -20,5 +20,11 @@
             <% end %>
           <% end %>
         <% end %>
+    </div>
+    <br>
+    <div style="width: 100%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
