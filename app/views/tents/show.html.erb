@@ -9,6 +9,8 @@
         <li class="list-group-item">📍 Location: <%= @tent.location %></li>
         <li class="list-group-item">💸 Price: £<%= @tent.price %></li>
       </ul>
+      <br>
+      <p class="fs-5"><%= link_to "Back to tents", tents_path, class: "btn btn-warning btn-lg" %></p>
     </div>
 
   <div class="col-6 fs-5">
@@ -25,5 +27,5 @@
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 </div>
-  <p class="fs-5"><%= link_to "Back to tents", tents_path, class: "btn btn-warning btn-lg" %></p>
+
 </div>
