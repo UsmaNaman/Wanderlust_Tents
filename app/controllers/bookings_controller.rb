@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
       {
         lat: @tent.latitude,
         lng: @tent.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { tent: @tent }),
+        info_window: render_to_string(partial: "tents/info_window", locals: { tent: @tent }),
         image_url: helpers.asset_path("tipi_map_logo.png")
       }
     ]
