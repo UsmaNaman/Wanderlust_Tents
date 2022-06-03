@@ -19,6 +19,14 @@ class BookingsController < ApplicationController
   def show
     set_booking
     @tent = @booking.tent
+    @markers = [
+      {
+        lat: @tent.latitude,
+        lng: @tent.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { tent: @tent }),
+        image_url: helpers.asset_path("tipi_map_logo.png")
+      }
+    ]
   end
 
   def new
