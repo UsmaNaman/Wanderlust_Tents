@@ -1,7 +1,7 @@
 <div class="container d-flex mt-5">
   <div class="row justify-content-center" id="name">
     <div class="col-6">
-      <h1 class="heading text-primary"><%= @tent.title %></h1>
+      <h1 class="heading text-primary fw-bolder"><%= @tent.title %></h1>
       <%= cl_image_tag @tent.photo.key, style: "width: 100%", crop: :fill, class: "img" %>
       <ul class="list-group fs-5 show-ul">
         <li class="list-group-item">⛺ <%= @tent.description %></li>
@@ -14,7 +14,7 @@
     </div>
 
   <div class="col-6 fs-5">
-    <h1 class="heading text-warning">Book this tent ✔️</h1>
+    <h1 class="heading text-warning fw-bolder">Book this tent ✔️</h1>
       <%= simple_form_for [@tent, @booking] do |f| %>
       <%= f.input :start_date, html5: true %>
       <%= f.input :end_date, html5: true %>

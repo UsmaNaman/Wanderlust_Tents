@@ -2,9 +2,9 @@
   <div class="row justify-content-center" id="name">
     <div class="col-6">
       <br>
-    <h2 class="text-center heading text-primary fs-2"><strong>Congratulations🎉<br>Your booking has been confirmed!</strong></h2><br>
-    <br>
-      <h3 class="text-center heading text-warning fs-1"><strong>Your booking details</strong></h3>
+    <h2 class="text-center heading text-primary fs-2 fw-bolder"><strong>Congratulations🎉<br>Your booking has been confirmed!</strong></h2>
+
+      <h3 class="text-center heading text-warning fs-1 fw-bolder"><strong>Your booking details</strong></h3>
         <br>
           <%= cl_image_tag @booking.tent.photo.key, style: "width: 100%", crop: :fill %>
           <br>
@@ -17,7 +17,7 @@
             <li class="list-group-item fs-5"><p>Total price: £<% time_difference = @booking.end_date.mjd - @booking.start_date.mjd %>
             <%= time_difference * @booking.tent.price.to_i %></p></li>
             <br>
-            <p class="fs-5"><%= link_to "Back to tents", tents_path, class: "btn btn-warning btn-lg" %></p>
+            <p class="fs-5"><%= link_to "Back to list of tents", tents_path %></p>
     </div>
   </div>
 </div>
