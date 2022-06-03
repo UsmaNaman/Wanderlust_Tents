@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container d-flex mt-5">
   <div class="row justify-content-center" id="name">
     <div class="col-6">
       <h1 class="heading text-primary"><%= @tent.title %></h1>
-      <%= cl_image_tag @tent.photo.key, height: 300, width: 635, crop: :fill %>
+      <%= cl_image_tag @tent.photo.key, style: "width: 100%", crop: :fill, class: "img" %>
       <ul class="list-group fs-5 show-ul">
         <li class="list-group-item">⛺ <%= @tent.description %></li>
         <li class="list-group-item">🧍🏼‍♂️ Capacity: <%= @tent.capacity %></li>
