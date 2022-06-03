@@ -1,27 +1,24 @@
-<div class="text-center">
-  <h1>Complete list of tents</h1>
-</div>
 
-<div class="container">
-  <div class="cards">
-      <% @tents.each do |tent| %>
-        <% if tent.photo.attached?%>
-        <%= link_to tent_path(tent) do %>
-          <div class="card-category"
-            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-          url('<%= cl_image_path tent.photo.key %>');"
-          >
-            <p><%= tent.title %></p>
-            <p>£<%= tent.price.to_i %></p>
-          </div>
+  <div class="box-container">
+    <h1 class="heading text-warning">⛰️ Complete List of Tents ⛰️</h1>
+    <div class="cards">
+        <% @tents.each do |tent| %>
+          <% if tent.photo.attached?%>
+            <%= link_to tent_path(tent) do %>
+              <div class="card-trip">
+                <%= cl_image_tag tent.photo.key, height: 300, width: 500, crop: :fill %>
+                <div class="card-trip-infos">
+                  <div>
+                    <span><%= tent.title %></span>
+                    <br>
+                    📍 <span class="locationcolor"><%= tent.location %></span>
+                    <br>
+                    £<span><%= tent.price.to_i %></span>
+                  </div>
+                </div>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
-    <br>
-  </div>
-    <div style="width: 100%; height: 600px;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-</div>
+  </div>
