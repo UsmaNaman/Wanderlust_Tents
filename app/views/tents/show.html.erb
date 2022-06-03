@@ -3,12 +3,13 @@
     <div class="col-6">
       <h1 class="heading text-primary"><%= @tent.title %></h1>
       <%= cl_image_tag @tent.photo.key, height: 300, width: 635, crop: :fill %>
-      <ul class="list-group fs-5">
+      <ul class="list-group fs-5 show-ul">
         <li class="list-group-item">⛺ <%= @tent.description %></li>
         <li class="list-group-item">🧍🏼‍♂️ Capacity: <%= @tent.capacity %></li>
         <li class="list-group-item">📍 Location: <%= @tent.location %></li>
         <li class="list-group-item">💸 Price: £<%= @tent.price %></li>
       </ul>
+<<<<<<< HEAD
       <br>
       <p class="fs-5"><%= link_to "Back to tents", tents_path, class: "btn btn-warning btn-lg" %></p>
     </div>
@@ -27,4 +28,24 @@
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
   </div>
+=======
+      <p class="fs-5"><%= link_to "Back to tents", tents_path, class: "btn btn-warning btn-lg" %></p>
+    </div>
+
+    <div class="col-6 fs-5">
+      <h1 class="heading text-warning">Book this tent ✔️</h1>
+      <%= simple_form_for [@tent, @booking] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.submit :Confirm %>
+       <% end %>
+      <br>
+      <div style="width: 100%; height: 600px;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      </div>
+    </div>
+>>>>>>> 07fd97374d19e89dd1f4ba116fc3fabf7c6dcc11
 </div>
