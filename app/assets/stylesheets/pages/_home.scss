@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 
 .banner {
-  height: 700px;
+  height: 100vh;
   background-image:
   linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.4) 50%), url('https://images.unsplash.com/photo-1478827536114-da961b7f86d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80');
   background-repeat: no-repeat;
@@ -70,4 +70,8 @@
 .homepage-background {
   background-color: #160f52;
   padding-top: 40px;
+}
+
+.row {
+  padding: 50px
 }
