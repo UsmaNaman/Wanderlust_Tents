@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center" id="name">
     <div class="col-6">
-      <h1 class="heading text-warning"><%= @tent.title %></h1>
+      <h1 class="heading text-primary"><%= @tent.title %></h1>
       <%= cl_image_tag @tent.photo.key, height: 300, width: 635, crop: :fill %>
       <ul class="list-group fs-5">
         <li class="list-group-item">⛺ <%= @tent.description %></li>
