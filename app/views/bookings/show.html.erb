@@ -2,7 +2,9 @@
   <div class="row justify-content-center" id="name" style="max-width: 50vw;">
     <div class="col-12 px-5">
       <h1><%= @booking.tent.title %></h1>
-      <%= cl_image_tag @booking.tent.photo.key, width: 635, crop: :fill, class: "img" %>
+      <br>
+      <%= cl_image_tag @booking.tent.photo.key, style: "width: 100%", crop: :fill, class: "img" %>
+      <br>
       <ul style= "padding: 0">
         <li class="list-group-item">Description: <%= @booking.tent.description %></li>
         <li class="list-group-item">Capacity: <%= @booking.tent.capacity %></li>
@@ -11,7 +13,7 @@
       </ul>
     </div>
   </div>
-  <div style="width: 50vw; height: 60vh; margin: auto;"
+  <div style="width: 50vw; height: 70vh; margin: auto;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
