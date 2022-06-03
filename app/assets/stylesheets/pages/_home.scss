@@ -75,3 +75,16 @@
 .row {
   padding: 50px
 }
+
+#searchbar {
+  padding-left: 170px;
+}
+
+.new-button a {
+  color: white;
+  background: rgb(54, 54, 189);
+  padding: 12px;
+  &:hover {
+    background:rgb(250, 89, 36);
+  }
+}
