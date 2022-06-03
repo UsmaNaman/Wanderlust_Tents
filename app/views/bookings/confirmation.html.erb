@@ -17,8 +17,8 @@
             <li class="list-group-item fs-5"><p>Total price: £<% time_difference = @booking.end_date.mjd - @booking.start_date.mjd %>
             <%= time_difference * @booking.tent.price.to_i %></p></li>
             <br>
-            <p class="fs-5"><%= link_to "Back to list of tents", tents_path %></p>
 
+            <p class="fs-5"><%= link_to "Back to list of tents", tents_path %></p>
     </div>
   </div>
 </div>
