@@ -2,11 +2,11 @@
   <div class="row justify-content-center" id="name">
     <div class="col-6">
       <br>
-    <h2 class="text-center heading text-primary fs-2"><strong>Congratulations🎉 your booking has been confirmed!</strong></h2><br>
+    <h2 class="text-center heading text-primary fs-2"><strong>Congratulations🎉<br>Your booking has been confirmed!</strong></h2><br>
     <br>
       <h3 class="text-center heading text-warning fs-1"><strong>Your booking details</strong></h3>
         <br>
-          <%= cl_image_tag @booking.tent.photo.key, height: 300, width: 635, crop: :fill %>
+          <%= cl_image_tag @booking.tent.photo.key, style: "width: 100%", crop: :fill %>
           <br>
             <ul class="list-group">
             <li class="list-group-item text-center fs-4"><strong>Start Date: <%= @booking.start_date %></strong> | <strong>End Date: <%= @booking.end_date %></strong></li>
