@@ -18,6 +18,11 @@
       <%= f.input :end_date %>
       <%= f.submit :Confirm %>
     <% end %>
+    <br>
+  <div style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 </div>
   <p class="fs-5"><%= link_to "Back to tents", tents_path, class: "btn btn-warning btn-lg" %></p>
