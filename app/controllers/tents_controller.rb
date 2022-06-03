@@ -15,6 +15,14 @@ class TentsController < ApplicationController
   def show
     @tent = Tent.find(params[:id])
     @booking = Booking.new
+    @markers = [
+      {
+        lat: @tent.latitude,
+        lng: @tent.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { tent: @tent }),
+        image_url: helpers.asset_path("tipi_map_logo.png")
+      }
+    ]
   end
 
   def new

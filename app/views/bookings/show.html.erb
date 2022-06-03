@@ -1,17 +1,21 @@
-<div class="container">
-  <div class="row justify-content-center" id="name">
-    <div class="col-6">
+<div class="container d-flex mt-5">
+  <div class="row justify-content-center" id="name" style="max-width: 50vw;">
+    <div class="col-12 px-5">
       <h1><%= @booking.tent.title %></h1>
-      <%= cl_image_tag @booking.tent.photo.key, height: 300, width: 635, crop: :fill %>
+      <br>
+      <%= cl_image_tag @booking.tent.photo.key, style: "width: 100%", crop: :fill, class: "img" %>
+      <br>
       <ul style= "padding: 0">
         <li class="list-group-item">Description: <%= @booking.tent.description %></li>
         <li class="list-group-item">Capacity: <%= @booking.tent.capacity %></li>
         <li class="list-group-item">Location: <%= @booking.tent.location %></li>
-        <li class="list-group-item">Price: £<%= @booking.tent.price %></li>
+        <li class="list-group-item">Price: £<%= @booking.tent.price.to_i %></li>
       </ul>
     </div>
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  <div style="width: 100%; height: 600px; margin: auto;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
