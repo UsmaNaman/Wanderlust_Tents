@@ -8,12 +8,8 @@ class BookingsController < ApplicationController
   def index
     @bookings = Booking.where(user_id: current_user.id)
     @tent = Tent.new
-    @past_bookings = current_user.bookings.select do |booking|
-      booking.end_date < Date.today
-      end
-    @future_bookings = current_user.bookings.select do |booking|
-      booking.end_date > Date.today
-      end
+    @past_bookings = current_user.bookings.order(start_date: :asc)
+    @future_bookings = current_user.bookings.order(start_date: :desc)
   end
 
   def show
