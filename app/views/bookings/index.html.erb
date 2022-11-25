@@ -16,6 +16,8 @@
             <br>
             <%= booking.tent.location %>
             <br>
+            <%= booking.start_date %>
+            <br>
             <%= link_to "Booking details", booking_path(booking) %>
           </div>
         </div>
@@ -38,6 +40,8 @@
                  <%= booking.tent.title %>
                 <br>
                 <%= booking.tent.location %>
+                <br>
+                <%= booking.start_date %>
                 <br>
                 <%= link_to "Booking details", booking_path(booking) %>
               </div>

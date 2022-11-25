@@ -9,6 +9,7 @@
         <li class="list-group-item">Description: <%= @booking.tent.description %></li>
         <li class="list-group-item">Capacity: <%= @booking.tent.capacity %></li>
         <li class="list-group-item">Location: <%= @booking.tent.location %></li>
+        <li class="list-group-item">Booking Date: <%= @booking.start_date %> to <%= @booking.end_date %></li>
         <li class="list-group-item">Price: £<%= @booking.tent.price.to_i %></li>
       </ul>
     </div>
