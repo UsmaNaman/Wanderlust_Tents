@@ -4,23 +4,25 @@
 
 <div class="container">
   <h2 class="heading text-primary fs-1 fw-bolder">Past Bookings</h2>
-  <div class="cards">
+    <div class="cards">
       <% @past_bookings.each do |booking| %>
         <%# <% if booking.photo.attached? %>
         <%# <%= link_to booking_path(booking) do  %>
           <div class="card-trip">
             <%= cl_image_tag booking.tent.photo.key, height: 300, width: 350, crop: :fill %>
             <div class="card-trip-infos">
-              <div>
-                <%= booking.tent.title %>
-                <br>
-                <%= booking.tent.location %>
-                <br>
-                <%= link_to "Booking details", booking_path(booking) %>
-              </div>
-            </div>
+            <div>
+            <%= booking.tent.title %>
+            <br>
+            <%= booking.tent.location %>
+            <br>
+            <%= booking.start_date %>
+            <br>
+            <%= link_to "Booking details", booking_path(booking) %>
           </div>
-        <% end %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
 
@@ -38,6 +40,8 @@
                  <%= booking.tent.title %>
                 <br>
                 <%= booking.tent.location %>
+                <br>
+                <%= booking.start_date %>
                 <br>
                 <%= link_to "Booking details", booking_path(booking) %>
               </div>
