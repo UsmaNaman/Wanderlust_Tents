@@ -1,5 +1,29 @@
 <div class="text-center">
-  <h1 class="heading text-warning fw-bolder">Complete List of Bookings</h1>
+  <h1 class="heading text-warning fw-bolder">My Bookings</h1>
+</div>
+
+<div class="container">
+  <h2 class = "heading text-primary fs-1 fw-bolder">Upcoming Bookings</h2>
+  <div class="cards">
+      <% @future_bookings.each do |booking| %>
+        <%# <% if booking.photo.attached? %>
+        <%= link_to booking_path(booking) do   %>
+          <div class="card-trip">
+            <%= cl_image_tag booking.tent.photo.key, height: 300, width: 350, crop: :fill %>
+            <div class="card-trip-infos">
+              <div>
+                 <%= booking.tent.title %>
+                <br>
+                <p>Location: </p><%= booking.tent.location %>
+                <br>
+                <p>From: </p><%= booking.start_date.strftime('%d %b %Y') %> to <%= booking.end_date.strftime('%d %b %Y') %>
+                <br>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
 </div>
 
 <div class="container">
@@ -7,46 +31,21 @@
     <div class="cards">
       <% @past_bookings.each do |booking| %>
         <%# <% if booking.photo.attached? %>
-        <%# <%= link_to booking_path(booking) do  %>
+        <%= link_to booking_path(booking) do %>
           <div class="card-trip">
             <%= cl_image_tag booking.tent.photo.key, height: 300, width: 350, crop: :fill %>
             <div class="card-trip-infos">
             <div>
             <%= booking.tent.title %>
             <br>
-            <%= booking.tent.location %>
+            <p>Location: </p><%= booking.tent.location %>
             <br>
-            <%= booking.start_date %>
+            <p>From: </p><%= booking.start_date.strftime('%d %b %Y') %> to <%= booking.end_date.strftime('%d %b %Y') %>
             <br>
-            <%= link_to "Booking details", booking_path(booking) %>
           </div>
         </div>
       </div>
+      <% end %>
     <% end %>
-  </div>
-</div>
-
-<div class="container">
-  <h2 class = "heading text-primary fs-1 fw-bolder">Future Bookings</h2>
-  <div class="cards">
-      <% @future_bookings.each do |booking| %>
-        <%# <% if booking.photo.attached? %>
-        <%# <%= link_to booking_path(booking) do   %>
-
-          <div class="card-trip">
-            <%= cl_image_tag booking.tent.photo.key, height: 300, width: 350, crop: :fill %>
-            <div class="card-trip-infos">
-              <div>
-                 <%= booking.tent.title %>
-                <br>
-                <%= booking.tent.location %>
-                <br>
-                <%= booking.start_date %>
-                <br>
-                <%= link_to "Booking details", booking_path(booking) %>
-              </div>
-            </div>
-          </div>
-        <% end %>
   </div>
 </div>
